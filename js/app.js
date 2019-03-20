@@ -229,14 +229,13 @@ var result = document.getElementById("result");
 
 
 function displayData() {
-  // console.log(name.value);
   let txt = `
   <table class="table table-bordered table-hover">
     <thead>
       <tr>
         <th>Name</th>
-        <th>Rotation</th>
-        <th>Orbital</th>
+        <th>Rotation Period</th>
+        <th>Orbital Period</th>
         <th>Diameter</th>
         <th>Surface Water</th>
       </tr>
@@ -263,25 +262,35 @@ function displayData() {
 }
 
 function displayDataFiltered(filteredData) {
-  let txt = `
-  <table class="table table-bordered table-hover">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Rotation</th>
-        <th>Orbital</th>
-        <th>Diameter</th>
-        <th>Surface Water</th>
-      </tr>
-    </thead>
-    <tbody>
-  `;
 
-  txt = txt + filteredData;
 
-  txt = txt + `</tbody></table>`;
+  if (filteredData != "") {
+    let txt = `
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Rotation Period</th>
+          <th>Orbital Period</th>
+          <th>Diameter</th>
+          <th>Surface Water</th>
+        </tr>
+      </thead>
+      <tbody>
+    `;
 
-  result.innerHTML = txt;
+    txt = txt + filteredData + `</tbody></table>`;
+
+    result.innerHTML = txt;
+  }
+  else {
+    result.innerHTML = `
+      <div class="alert alert-danger" role="alert">
+        Sorry, the keyword you're looking for isn't available in the data :(
+      </div>
+    `;
+  }
+
 }
 
 
@@ -322,17 +331,33 @@ function rotationProccess() {
   }
 
   data.results.forEach((item) => {
-    if (item.rotation_period.includes(rotation.value)) {
-      txt = txt +
-        `
-      <tr class="filtered-data">
-        <td>${item.name}</td>
-        <td>${item.rotation_period}</td>
-        <td>${item.orbital_period}</td>
-        <td>${item.diameter}</td>
-        <td>${item.surface_water}</td>
-      </tr>
-      `;
+    if (rotation.value.length == 1) {
+      if (item.rotation_period[0] == rotation.value) {
+        txt = txt +
+          `
+        <tr class="filtered-data">
+          <td>${item.name}</td>
+          <td>${item.rotation_period}</td>
+          <td>${item.orbital_period}</td>
+          <td>${item.diameter}</td>
+          <td>${item.surface_water}</td>
+        </tr>
+        `;
+      }
+    }
+    else {
+      if (item.rotation_period.includes(rotation.value)) {
+        txt = txt +
+          `
+        <tr class="filtered-data">
+          <td>${item.name}</td>
+          <td>${item.rotation_period}</td>
+          <td>${item.orbital_period}</td>
+          <td>${item.diameter}</td>
+          <td>${item.surface_water}</td>
+        </tr>
+        `;
+      }
     }
   });
 
@@ -376,9 +401,24 @@ function diameterProccess() {
   }
 
   data.results.forEach((item) => {
-    if (item.diameter.includes(diameter.value)) {
-      txt = txt +
-        `
+    if (diameter.value.length == 1) {
+      if (item.diameter[0] == diameter.value) {
+        txt = txt +
+          `
+        <tr class="filtered-data">
+          <td>${item.name}</td>
+          <td>${item.rotation_period}</td>
+          <td>${item.orbital_period}</td>
+          <td>${item.diameter}</td>
+          <td>${item.surface_water}</td>
+        </tr>
+        `;
+      }
+    }
+    else {
+      if (item.diameter.includes(diameter.value)) {
+        txt = txt +
+          `
       <tr class="filtered-data">
         <td>${item.name}</td>
         <td>${item.rotation_period}</td>
@@ -387,6 +427,7 @@ function diameterProccess() {
         <td>${item.surface_water}</td>
       </tr>
       `;
+      }
     }
   });
 
