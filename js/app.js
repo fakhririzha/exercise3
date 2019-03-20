@@ -237,7 +237,7 @@ var result = document.getElementById("result");
 function displayData() {
   // console.log(name.value);
   let txt = `
-  <table class="table table-bordered table-hover table-responsive">
+  <table class="table table-bordered table-hover">
     <thead>
       <tr>
         <th>Name</th>
@@ -260,9 +260,7 @@ function displayData() {
       <td>${item.rotation_period}</td>
       <td>${item.orbital_period}</td>
       <td>${item.diameter}</td>
-      <td>${item.climate}</td>
       <td>${item.surface_water}</td>
-      <td>${item.population}</td>
     </tr>
     `;
   });
@@ -275,7 +273,7 @@ displayData();
 
 function displayDataFiltered(filteredData) {
   let txt = `
-  <table class="table table-bordered table-hover table-responsive">
+  <table class="table table-bordered table-hover">
     <thead>
       <tr>
         <th>Name</th>
@@ -316,9 +314,7 @@ function nameProccess() {
         <td>${item.rotation_period}</td>
         <td>${item.orbital_period}</td>
         <td>${item.diameter}</td>
-        <td>${item.climate}</td>
         <td>${item.surface_water}</td>
-        <td>${item.population}</td>
       </tr>
       `;
     }
@@ -345,9 +341,7 @@ function rotationProccess() {
         <td>${item.rotation_period}</td>
         <td>${item.orbital_period}</td>
         <td>${item.diameter}</td>
-        <td>${item.climate}</td>
         <td>${item.surface_water}</td>
-        <td>${item.population}</td>
       </tr>
       `;
     }
@@ -374,9 +368,7 @@ function orbitalProccess() {
         <td>${item.rotation_period}</td>
         <td>${item.orbital_period}</td>
         <td>${item.diameter}</td>
-        <td>${item.climate}</td>
         <td>${item.surface_water}</td>
-        <td>${item.population}</td>
       </tr>
       `;
     }
@@ -403,38 +395,7 @@ function diameterProccess() {
         <td>${item.rotation_period}</td>
         <td>${item.orbital_period}</td>
         <td>${item.diameter}</td>
-        <td>${item.climate}</td>
         <td>${item.surface_water}</td>
-        <td>${item.population}</td>
-      </tr>
-      `;
-    }
-  });
-
-  displayDataFiltered(txt);
-}
-
-function climateProccess() {
-  var climate = document.getElementById("climate");
-  let txt = "";
-
-  if (climate.value == "") {
-    displayData();
-    return;
-  }
-
-  data.results.forEach((item) => {
-    if (item.climate.toLowerCase().includes(climate.value)) {
-      txt = txt +
-        `
-      <tr class="filtered-data">
-        <td>${item.name}</td>
-        <td>${item.rotation_period}</td>
-        <td>${item.orbital_period}</td>
-        <td>${item.diameter}</td>
-        <td>${item.climate}</td>
-        <td>${item.surface_water}</td>
-        <td>${item.population}</td>
       </tr>
       `;
     }
@@ -461,38 +422,7 @@ function surfaceProccess() {
         <td>${item.rotation_period}</td>
         <td>${item.orbital_period}</td>
         <td>${item.diameter}</td>
-        <td>${item.climate}</td>
         <td>${item.surface_water}</td>
-        <td>${item.population}</td>
-      </tr>
-      `;
-    }
-  });
-
-  displayDataFiltered(txt);
-}
-
-function populationProccess() {
-  var population = document.getElementById("population");
-  let txt = "";
-
-  if (population.value == "") {
-    displayData();
-    return;
-  }
-
-  data.results.forEach((item) => {
-    if (item.population.includes(population.value)) {
-      txt = txt +
-        `
-      <tr class="filtered-data">
-        <td>${item.name}</td>
-        <td>${item.rotation_period}</td>
-        <td>${item.orbital_period}</td>
-        <td>${item.diameter}</td>
-        <td>${item.climate}</td>
-        <td>${item.surface_water}</td>
-        <td>${item.population}</td>
       </tr>
       `;
     }
