@@ -3,7 +3,7 @@
 Made by [Fakhri Rizha Ananda](https://github.com/user/fakhririzha).
 
 
-Course brought to you by : [Hacktiv8](https://hacktiv8.com) and [Facebook Developer Circles](https://developercircles.facebook.com).
+[Course](https://hacktiv8.com/id/devc-javascript-development-course) brought to you by : [Hacktiv8](https://hacktiv8.com) and [Facebook Developer Circles](https://developers.facebook.com/developercircles/).
 
 ## Table of Contents
 - [Task Description](#task-description)
@@ -24,7 +24,7 @@ Buatlah sebuah web dengan menggunakan JavaScript untuk menampilkan data berbentu
 
 ## Data Source
 
-[Swapi](https://swapi.com)
+[Swapi](https://swapi.co/api/planets/)
 
 ## Raw Data
 
