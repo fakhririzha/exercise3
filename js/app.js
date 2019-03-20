@@ -225,12 +225,6 @@ var data = {
   ]
 };
 
-var rotation = document.getElementById("rotation_period");
-var orbital = document.getElementById("orbital_period");
-var diameter = document.getElementById("diamter");
-var climate = document.getElementById("climate");
-var surface = document.getElementById("surface_water");
-var population = document.getElementById("popultion");
 var result = document.getElementById("result");
 
 
@@ -244,9 +238,7 @@ function displayData() {
         <th>Rotation</th>
         <th>Orbital</th>
         <th>Diameter</th>
-        <th>Climate</th>
-        <th>Surface</th>
-        <th>Population</th>
+        <th>Surface Water</th>
       </tr>
     </thead>
     <tbody>
@@ -269,7 +261,6 @@ function displayData() {
 
   result.innerHTML = txt;
 }
-displayData();
 
 function displayDataFiltered(filteredData) {
   let txt = `
@@ -280,9 +271,7 @@ function displayDataFiltered(filteredData) {
         <th>Rotation</th>
         <th>Orbital</th>
         <th>Diameter</th>
-        <th>Climate</th>
-        <th>Surface</th>
-        <th>Population</th>
+        <th>Surface Water</th>
       </tr>
     </thead>
     <tbody>
