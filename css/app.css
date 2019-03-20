@@ -1,0 +1,31 @@
+/* .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+*/
+
+.table-bordered {
+  border: none;
+}
+
+.container-fluid {
+  /* width: 80%; */
+  padding-top: 50px;
+}
+
+.form-inline {
+  padding-left: 0.75%;
+  padding-right: 0.75%;
+}
+
+.form-inline .form-control {
+  width: 14%;
+  margin-right: 0.135%;
+  margin-left: 0.135%
+}
+
+.filtered-data {
+  background-color: orangered;
+}

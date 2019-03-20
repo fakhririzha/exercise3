@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript Object</title>
+
+  <!-- CSS TAG -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css">
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <h3>Filter Data</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col form-inline">
+        <input type="text" class="form-control" id="name" onkeyup="nameProccess()" placeholder="Name">
+        <input type="text" class="form-control" id="rotation_period" onkeyup="rotationProccess()" placeholder="Rotation">
+        <input type="text" class="form-control" id="orbital_period" onkeyup="orbitalProccess()" placeholder="Orbital">
+        <input type="text" class="form-control" id="diameter" onkeyup="diameterProccess()" placeholder="Diameter">
+        <input type="text" class="form-control" id="climate" onkeyup="climateProccess()" placeholder="Climate">
+        <input type="text" class="form-control" id="surface_water" onkeyup="surfaceProccess()" placeholder="Surface">
+        <input type="text" class="form-control" id="population" onkeyup="populationProccess()" placeholder="Population">
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <div id="result">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<!-- SCRIPT TAG -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+
+</html>
