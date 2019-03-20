@@ -1,65 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+# JavaScript Object Proccessing and Filtering (Exercise 3)
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Exercise 3 | DevCJSDevCourse</title>
+Made by [Fakhri Rizha Ananda](https://github.com/user/fakhririzha).
 
-  <!-- CSS TAG -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/app.css">
 
-</head>
+Course brought to you by : [Hacktiv8](https://hacktiv8.com) and [Facebook Developer Circles](https://developercircles.facebook.com).
 
-<body onload="displayData()">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <h3>Filter Data</h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col form-inline">
-        <input type="text" class="form-control" id="name" onkeyup="nameProccess()" placeholder="Name">
-        <input type="text" class="form-control" id="rotation_period" onkeyup="rotationProccess()" placeholder="Rotation Period">
-        <input type="text" class="form-control" id="orbital_period" onkeyup="orbitalProccess()" placeholder="Orbital Period">
-        <input type="text" class="form-control" id="diameter" onkeyup="diameterProccess()" placeholder="Diameter">
-        <input type="text" class="form-control" id="surface_water" onkeyup="surfaceProccess()" placeholder="Surface">
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <h3>Data</h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div id="result">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col">
-        <h3>Raw Data</h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <p>
-          <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#rawData" aria-expanded="false"
-            aria-controls="rawData">
-            Click to expand
-          </button>
-        </p>
-        <div class="collapse" id="rawData">
-          <div class="card card-body">
-            <pre>
+## Table of Contents
+- [Task Description](#task-description)
+- [Framework Used](#framework-used)
+- [Data Source](#data-source)
+- [Raw Data](#raw-data)
+- [Preview](#preview)
+
+## Task Description
+
+Buatlah sebuah web dengan menggunakan JavaScript untuk menampilkan data berbentuk JavaScript object dan memiliki fitur search/filter.
+![Foto Tugas](https://raw.githubusercontent.com/fakhririzha/exercise3/master/img/fototugas.png)
+
+## Framework Used
+
+- [Bootstrap CSS](https://getbootstrap.com)
+- [jQuery](https://code.jquery.com)
+
+## Data Source
+
+[Swapi](https://swapi.com)
+
+## Raw Data
+
+```json
 {
   "count": 61,
   "next": "https://swapi.co/api/planets/?page=2",
@@ -286,17 +255,8 @@
     }
   ]
 }
-            </pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+```
 
-<!-- SCRIPT TAG -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/app.js"></script>
+## Preview
 
-</html>
+![Preview](https://raw.githubusercontent.com/fakhririzha/exercise3/master/img/display.png)
