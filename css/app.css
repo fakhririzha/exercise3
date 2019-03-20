@@ -4,7 +4,7 @@ body {
   background-size: 800% 800%;
   -webkit-animation: Gradient 15s ease infinite;
   -moz-animation: Gradient 15s ease infinite;
-animation: Gradient 15sease infinite;
+  animation: Gradient 15ease infinite;
 }
 
 @-webkit-keyframes Gradient {
