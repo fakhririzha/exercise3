@@ -264,7 +264,7 @@ Front Page
 
 
 Hightlights Version
-![Preview](https://raw.githubusercontent.com/fakhririzha/exercise3/master/img/display.png)
+![Preview](https://raw.githubusercontent.com/fakhririzha/exercise3/master/img/highlights.png)
 
 Reduced Version
-![Preview](https://raw.githubusercontent.com/fakhririzha/exercise3/master/img/display.png)
+![Preview](https://raw.githubusercontent.com/fakhririzha/exercise3/master/img/reduced.png)

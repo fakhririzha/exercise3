@@ -79,3 +79,50 @@ pre {
 .filtered-data {
   background-color: rgba(255, 149, 149, 0.966);
 }
+
+/* BUTTON STYLE FOR FRONT PAGE */
+
+.btn-facebook {
+  background-color: #4267B2;
+}
+
+.btn-facebook:hover {
+  background-color: #3B5DA0;
+}
+
+.btn-twitter {
+  background-color: #FFFFFF;
+  color: #1DA1F2;
+}
+
+.btn-twitter:hover {
+  background-color: #DDDDDE;
+  color: #1DA1F2;
+}
+
+.btn-instagram {
+  background-color: #ED4956;
+}
+
+.btn-instagram:hover {
+  background-color: #DD414E;
+  color: #FFFFFF;
+}
+
+.btn-github {
+  background-color: #202020;
+}
+
+.btn-github:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.btn-steam {
+  background-color: #202020;
+}
+
+.btn-steam:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
