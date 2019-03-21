@@ -1,35 +1,4 @@
-# JavaScript Object Proccessing and Filtering (Exercise 3)
-
-Made by [Fakhri Rizha Ananda](https://github.com/user/fakhririzha).
-
-
-[Course](https://hacktiv8.com/id/devc-javascript-development-course) brought to you by : [Hacktiv8](https://hacktiv8.com) and [Facebook Developer Circles](https://developers.facebook.com/developercircles/).
-
-## Table of Contents
-- [Task Description](#task-description)
-- [Framework Used](#framework-used)
-- [Data Source](#data-source)
-- [Raw Data](#raw-data)
-- [Preview](#preview)
-
-## Task Description
-
-Buatlah sebuah web dengan menggunakan JavaScript untuk menampilkan data berbentuk JavaScript object dan memiliki fitur search/filter.
-![Foto Tugas](https://raw.githubusercontent.com/fakhririzha/exercise3/master/img/fototugas.png)
-
-## Framework Used
-
-- [Bootstrap CSS](https://getbootstrap.com)
-- [jQuery](https://code.jquery.com)
-
-## Data Source
-
-[Swapi](https://swapi.co/api/planets/)
-
-## Raw Data
-
-```json
-{
+var data = {
   "count": 61,
   "next": "https://swapi.co/api/planets/?page=2",
   "previous": null,
@@ -254,17 +223,240 @@ Buatlah sebuah web dengan menggunakan JavaScript untuk menampilkan data berbentu
       "url": "https://swapi.co/api/planets/11/"
     }
   ]
+};
+
+var result = document.getElementById("result");
+
+
+function displayData() {
+  let txt = `
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Rotation Period</th>
+        <th>Orbital Period</th>
+        <th>Diameter</th>
+        <th>Surface Water</th>
+      </tr>
+    </thead>
+    <tbody>
+  `;
+
+  data.results.forEach((item) => {
+    txt = txt +
+      `
+    <tr>
+      <td>${item.name}</td>
+      <td>${item.rotation_period}</td>
+      <td>${item.orbital_period}</td>
+      <td>${item.diameter}</td>
+      <td>${item.surface_water}</td>
+    </tr>
+    `;
+  });
+
+  txt = txt + `</tbody></table>`;
+
+  result.innerHTML = txt;
 }
-```
 
-## Preview
-
-Front Page
-![Preview](https://raw.githubusercontent.com/fakhririzha/exercise3/master/img/display.png)
+function displayDataFiltered(filteredData) {
 
 
-Hightlights Version
-![Preview](https://raw.githubusercontent.com/fakhririzha/exercise3/master/img/display.png)
+  if (filteredData != "") {
+    let txt = `
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Rotation Period</th>
+          <th>Orbital Period</th>
+          <th>Diameter</th>
+          <th>Surface Water</th>
+        </tr>
+      </thead>
+      <tbody>
+    `;
 
-Reduced Version
-![Preview](https://raw.githubusercontent.com/fakhririzha/exercise3/master/img/display.png)
+    txt = txt + filteredData + `</tbody></table>`;
+
+    result.innerHTML = txt;
+  }
+  else {
+    result.innerHTML = `
+      <div class="alert alert-danger" role="alert">
+        Sorry, the keyword you're looking for isn't available in the data :(
+      </div>
+    `;
+  }
+
+}
+
+
+function nameProccess() {
+  var name = document.getElementById("name");
+  let txt = "";
+
+  if (name.value == "") {
+    displayData();
+    return;
+  }
+
+  data.results.forEach((item) => {
+    if (item.name.toLowerCase().includes(name.value)) {
+      txt = txt +
+        `
+      <tr>
+        <td>${item.name}</td>
+        <td>${item.rotation_period}</td>
+        <td>${item.orbital_period}</td>
+        <td>${item.diameter}</td>
+        <td>${item.surface_water}</td>
+      </tr>
+      `;
+    }
+  });
+
+  displayDataFiltered(txt);
+}
+
+function rotationProccess() {
+  var rotation = document.getElementById("rotation_period");
+  let txt = "";
+
+  if (rotation.value == "") {
+    displayData();
+    return;
+  }
+
+  data.results.forEach((item) => {
+    if (rotation.value.length == 1) {
+      if (item.rotation_period[0] == rotation.value) {
+        txt = txt +
+          `
+        <tr>
+          <td>${item.name}</td>
+          <td>${item.rotation_period}</td>
+          <td>${item.orbital_period}</td>
+          <td>${item.diameter}</td>
+          <td>${item.surface_water}</td>
+        </tr>
+        `;
+      }
+    }
+    else {
+      if (item.rotation_period.includes(rotation.value)) {
+        txt = txt +
+          `
+        <tr>
+          <td>${item.name}</td>
+          <td>${item.rotation_period}</td>
+          <td>${item.orbital_period}</td>
+          <td>${item.diameter}</td>
+          <td>${item.surface_water}</td>
+        </tr>
+        `;
+      }
+    }
+  });
+
+  displayDataFiltered(txt);
+}
+
+function orbitalProccess() {
+  var orbital = document.getElementById("orbital_period");
+  let txt = "";
+
+  if (orbital.value == "") {
+    displayData();
+    return;
+  }
+
+  data.results.forEach((item) => {
+    if (item.orbital_period.includes(orbital.value)) {
+      txt = txt +
+        `
+      <tr>
+        <td>${item.name}</td>
+        <td>${item.rotation_period}</td>
+        <td>${item.orbital_period}</td>
+        <td>${item.diameter}</td>
+        <td>${item.surface_water}</td>
+      </tr>
+      `;
+    }
+  });
+
+  displayDataFiltered(txt);
+}
+
+function diameterProccess() {
+  var diameter = document.getElementById("diameter");
+  let txt = "";
+
+  if (diameter.value == "") {
+    displayData();
+    return;
+  }
+
+  data.results.forEach((item) => {
+    if (diameter.value.length == 1) {
+      if (item.diameter[0] == diameter.value) {
+        txt = txt +
+          `
+        <tr>
+          <td>${item.name}</td>
+          <td>${item.rotation_period}</td>
+          <td>${item.orbital_period}</td>
+          <td>${item.diameter}</td>
+          <td>${item.surface_water}</td>
+        </tr>
+        `;
+      }
+    }
+    else {
+      if (item.diameter.includes(diameter.value)) {
+        txt = txt +
+          `
+      <tr>
+        <td>${item.name}</td>
+        <td>${item.rotation_period}</td>
+        <td>${item.orbital_period}</td>
+        <td>${item.diameter}</td>
+        <td>${item.surface_water}</td>
+      </tr>
+      `;
+      }
+    }
+  });
+
+  displayDataFiltered(txt);
+}
+
+function surfaceProccess() {
+  var surface = document.getElementById("surface_water");
+  let txt = "";
+
+  if (surface.value == "") {
+    displayData();
+    return;
+  }
+
+  data.results.forEach((item) => {
+    if (item.surface_water.includes(surface.value)) {
+      txt = txt +
+        `
+      <tr>
+        <td>${item.name}</td>
+        <td>${item.rotation_period}</td>
+        <td>${item.orbital_period}</td>
+        <td>${item.diameter}</td>
+        <td>${item.surface_water}</td>
+      </tr>
+      `;
+    }
+  });
+
+  displayDataFiltered(txt);
+}

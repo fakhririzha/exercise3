@@ -2,9 +2,9 @@ body {
   color: #fff;
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background-size: 800% 800%;
-  -webkit-animation: Gradient 15s ease infinite;
-  -moz-animation: Gradient 15s ease infinite;
-  animation: Gradient 15ease infinite;
+  /* -webkit-animation: Gradient 15s ease infinite;
+-moz-animation: Gradient 15s ease infinite;
+animation: Gradient 15ease infinite; */
 }
 
 @-webkit-keyframes Gradient {
@@ -67,6 +67,15 @@ pre {
   margin-left: 0.135%
 }
 
+.course-link {
+  color: white;
+}
+
+.course-link:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .filtered-data {
-  background-color: rgba(255, 149, 149, 0.699);
+  background-color: rgba(255, 149, 149, 0.966);
 }
